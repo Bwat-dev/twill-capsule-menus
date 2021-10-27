@@ -67,7 +67,7 @@ class MenuMenuItemController extends ModuleController
             'breadcrumb' => [
                 [
                     'label' => 'Menus',
-                    'url' => moduleRoute('menus', '', 'index',),
+                    'url' => moduleRoute('menus', '', 'index'),
                 ],
 
                 [
@@ -94,6 +94,7 @@ class MenuMenuItemController extends ModuleController
         return MenuItemRequest::class;
     }
 
+    //todo remove when the PR will be merge
     protected function getModulePermalinkBase()
     {
         $base = '';

@@ -59,11 +59,6 @@ class MenuItem extends Model implements Sortable
         ],
     ];
 
-    public function scopeType($query)
-    {
-        return $query->where('menu_id', session('currentMenuAdmin'));
-    }
-
     /**
      * @return BelongsTo
      */
