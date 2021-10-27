@@ -31,7 +31,7 @@ class Item extends Component
             $model = $this->item->getRelated('related_menu')->first();
 
             if($model instanceof Model) {
-                return $model->url();
+                return method_exists($model, 'url') ? $model->url() : $model->slug;
             }
 
             return '';
