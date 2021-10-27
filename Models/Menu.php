@@ -13,6 +13,7 @@ use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
 use App\Twill\Capsules\Menus\Models\Presenters\MenuPresenter;
 use App\Twill\Capsules\Menus\Models\Revisions\MenuRevision;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Menu extends Model implements Sortable
 {
@@ -68,6 +69,13 @@ class Menu extends Model implements Sortable
         ],
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function menuItems() : HasMany
+    {
+        return $this->hasMany(MenuItem::class);
+    }
 
     protected function getRevisionModel()
     {
