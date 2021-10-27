@@ -8,7 +8,7 @@ use Illuminate\View\Component;
 
 class Navigation extends Component
 {
-    public $type;
+    public $id;
 
     public $menu;
 
@@ -16,10 +16,10 @@ class Navigation extends Component
 
     public $showLinks;
 
-    public function __construct($type, $showLinks=true)
+    public function __construct($id, $showLinks=true)
     {
-        $this->type = $type;
-        $this->menu = Menu::with(['menuItems', 'menuItems.relatedItems'])->where('id', $type)->first();
+        $this->id = $id;
+        $this->menu = Menu::with(['menuItems', 'menuItems.relatedItems'])->where('id', $id)->first();
 
         $this->current = $this->getCurrentMenuItem();
 

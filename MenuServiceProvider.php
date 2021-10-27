@@ -35,7 +35,7 @@ class MenuServiceProvider extends ServiceProvider
         ], 'twill-capsule-menus-views');
 
 
-        View::composer('layouts.*', MenuComposer::class);
+        View::composer(config('twill.menus.layoutViewComposer'), MenuComposer::class);
 
     }
 }

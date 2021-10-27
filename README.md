@@ -53,3 +53,25 @@ in your twill.php config file:
         ],
     ]
 ```
+## Front
+
+You can generate a base menu in your front page  like this :
+```php
+<x-menus-navigation id="3"/> //id of the menu
+```
+You can publish blade components menu files :
+
+```
+php artisan vendor:publish --tag=twill-capsule-menus-views
+```
+
+### Active link
+
+To handle active link in the generate menu you can register the view composer to your own layout like so :
+
+```php
+    //config/twill.php
+    'menus' => [
+        'layoutViewComposer' => 'layouts.*'
+    ]
+```
