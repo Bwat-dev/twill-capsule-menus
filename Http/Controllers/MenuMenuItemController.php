@@ -60,21 +60,10 @@ class MenuMenuItemController extends ModuleController
     {
         $menu = Menu::find($this->submoduleParentId);
         $item = MenuItem::find($request->route('menuItem'));
-        $routes = [
-            [
-                'value' => '',
-                'label' =>  'Select Item',
-            ],
-            /*[
-                'value' => 'pages.index',
-                'label' => 'Page listing'
-            ]*/
-        ];
 
 
         return [
             'menu' => $menu,
-            'routes' => $routes,
             'breadcrumb' => [
                 [
                     'label' => 'Menus',

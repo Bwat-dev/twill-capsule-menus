@@ -12,14 +12,12 @@
         'label' => 'Description',
         'maxlength' => 100
     ])
-
-
 @stop
 
 @section('fieldsets')
     @formFieldset(['id' => 'internal-links', 'title' => 'Internal Item'])
     @formField('browser', [
-        'modules' => config('twill.linkable'),
+        'modules' => config('twill.menus.linkable'),
         'name' => 'related_menu',
         'note' => 'Page, Article...',
         'label' => 'Internal Item'
@@ -55,7 +53,8 @@
     @formField('select', [
         'name' => 'route_path',
         'label' => 'Link to Listing Item',
-        'options' => $routes
+        'options' => config('twill.menus.routes'),
+        'default' => ''
     ])
 
     @formField('input', [
