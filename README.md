@@ -64,6 +64,20 @@ You can generate a base menu in your front page  like this :
 ```
 php artisan vendor:publish --tag=twill-capsule-menus-views
 ```
+### 
+
+In your Model you can define an url method :
+
+```php
+    public function url($locale=null)
+    {
+        $locale = empty($locale) ? App::getLocale() : $locale;
+
+        return route('pages.show', [
+                'slug' => empty($this->getSlug($locale)) ? $this->getSlug() : $this->getSlug($locale),
+            ], false);
+    }
+```
 
 ### Active link
 
