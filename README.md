@@ -81,7 +81,7 @@ In your Model you can define an url method :
 
 ### Active link
 
-To handle active link in the generate menu you can register the view composer to your own layout like so :
+To handle active link in the generated menu you have to register your layout in :
 
 ```php
     //config/twill.php
