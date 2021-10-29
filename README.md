@@ -59,7 +59,7 @@ You can generate a base menu in your front page  like this :
 ```php
 <x-menus-navigation id="3"/> //id of the menu
 ```
- blade components files can be publish:
+ blade components files can be published:
 
 ```
 php artisan vendor:publish --tag=twill-capsule-menus-views
